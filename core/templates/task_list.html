@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+</head>
+<body>
+    <a href="new" class="btn btn-primary">Add Task</a>
+    <br>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Descripción</th>
+                <th>Creado</th>
+                <th>Fecha Límite</th>
+                <th>Prioridad</th>
+                <th>Estado</th>                
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+                <div>
+                    <tr>
+                        <td>{{task.title}}</td>
+                        <td>{{task.description}}</td>
+                        <td>{{task.created}}</td>
+                        <td>{{task.deadline}}</td>
+                        <td>{{task.get_priority_display}}</td>                        
+                        <td>{{task.get_status_display}}</td>                                                
+                    </tr>
+                </div>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

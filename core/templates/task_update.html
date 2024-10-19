@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+</head>
+<body>
+    <form method="POST" action="{% url 'task-update' task.pk %}">
+        {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="titleInput">Título</label>
+                <input type="text" name="title" id="title" class="form-control" value="{{task.title}}">
+            </div>
+            <br>
+            <div class="form-group">        
+                <label for="descriptionInput">Descripción</label>
+                <input type="text" name="description" id="description" class="form-control" value="{{task.description}}">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="deadlineInput">Fecha Límite</label>
+                <input type="date" name="deadline" id="deadline" class="form-control" value="{{task.deadline|date:'Y-m-d'}}">  
+            </div>
+            <br>
+            <div class="form-group">                
+                <label for="priorityInput">Prioridad</label>
+                <select name="priority" id="priority" class="form-control">
+                    {% for id,value in priorities %}
+                        <option value="{{id}}" {% if task.priority == id %} selected="selected" {% endif %} >{{value}}</option>
+                    {% endfor %}
+                </select>
+                {% comment %} <input type="text" name="priority" id="priority" class="form-control" value="{{task.priority}}"> {% endcomment %}
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="statusInput">Estado</label>
+                <select name="status" id="status" class="form-control">
+                    {% for id,value in states %}
+                        <option value="{{id}}" {% if task.status == id %} selected="selected" {% endif %} >{{value}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Update Task</button>
+    </form>
+</body>
+</html>

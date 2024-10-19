@@ -30,8 +30,7 @@
                     {% for id,value in priorities %}
                         <option value="{{id}}" {% if task.priority == id %} selected="selected" {% endif %} >{{value}}</option>
                     {% endfor %}
-                </select>
-                {% comment %} <input type="text" name="priority" id="priority" class="form-control" value="{{task.priority}}"> {% endcomment %}
+                </select>        
             </div>
             <br>
             <div class="form-group">

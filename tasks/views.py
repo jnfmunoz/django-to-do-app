@@ -33,3 +33,8 @@ def task_update(request, pk):
     else:
         print(form.errors)
     return render(request, 'task_update.html', {'task':task, 'priorities': Task.PRIORITY ,'states': Task.STATUS})
+
+def task_delete(request, pk):
+    task = Task.objects.get(pk=pk)
+    task.delete()
+    return redirect('task-list')

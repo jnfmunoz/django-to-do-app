@@ -20,7 +20,7 @@ class Task(models.Model):
     created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha creación")
     deadline = models.DateField(verbose_name="Fecha límite")
     priority = models.CharField(max_length=1, choices=PRIORITY, blank=True, default='B', verbose_name="Prioridad")
-    status = models.CharField(max_length=12, choices=STATUS, blank=True, default='E', verbose_name="Estado")
+    status = models.CharField(max_length=1, choices=STATUS, blank=True, default='E', verbose_name="Estado")
 
     class Meta:
         verbose_name = "Tarea"

@@ -18,6 +18,7 @@ class Task(models.Model):
     title = models.CharField(validators=[MinLengthValidator(3)], max_length=200, verbose_name="Título")
     description = models.TextField(max_length=200, verbose_name="Descripción")
     created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha creación")
+    updated = models.DateTimeField(auto_now=True, verbose_name="Fecha de edición")
     deadline = models.DateField(verbose_name="Fecha límite")
     priority = models.CharField(max_length=1, choices=PRIORITY, blank=True, default='B', verbose_name="Prioridad")
     status = models.CharField(max_length=1, choices=STATUS, blank=True, default='E', verbose_name="Estado")

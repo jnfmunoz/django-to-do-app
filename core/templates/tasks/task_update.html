@@ -7,17 +7,17 @@
 </head>
 <body>
     <form method="POST" action="{% url 'task-update' task.pk %}">
-        {% csrf_token %}
-            
-            <div class="form-group">
+        {% csrf_token %}                
+        {{ form.as_p}}
+            {% comment %} <div class="form-group">
                 <label for="titleInput">Título</label>
-                <input type="text" name="title" id="title" class="form-control" value="{{task.title}}">
+                {{ form.title }}
             </div>
             <br>
             <div class="form-group">        
                 <label for="descriptionInput">Descripción</label>
-                <input type="text" name="description" id="description" class="form-control" value="{{task.description}}">
-            </div>
+                {{ form.description }}
+            </div>        
             <br>
             <div class="form-group">
                 <label for="deadlineInput">Fecha Límite</label>
@@ -26,21 +26,13 @@
             <br>
             <div class="form-group">                
                 <label for="priorityInput">Prioridad</label>
-                <select name="priority" id="priority" class="form-control">
-                    {% for id,value in priorities %}
-                        <option value="{{id}}" {% if task.priority == id %} selected="selected" {% endif %} >{{value}}</option>
-                    {% endfor %}
-                </select>        
+                {{ form.priority }}
             </div>
             <br>
             <div class="form-group">
-                <label for="statusInput">Estado</label>
-                <select name="status" id="status" class="form-control">
-                    {% for id,value in states %}
-                        <option value="{{id}}" {% if task.status == id %} selected="selected" {% endif %} >{{value}}</option>
-                    {% endfor %}
-                </select>
-            </div>
+                <label for="statusInput">Completada</label>
+                {{ form.status }}
+            </div> {% endcomment %}
             <br>
             <button type="submit" class="btn btn-primary">Update Task</button>
     </form>

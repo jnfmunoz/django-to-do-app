@@ -2,6 +2,9 @@ from django.db import models
 from django.core.validators import MinLengthValidator, MaxLengthValidator
 from django.urls import reverse
 
+from django.core.exceptions import ValidationError
+from datetime import date
+
 # Create your models here.
 class Task(models.Model):
     PRIORITY = {
@@ -28,3 +31,8 @@ class Task(models.Model):
 
     def __str__(self) -> str:
         return self.title
+    
+    def clean(self):
+        super().clean()
+        if self.deadline and self.deadline < date.today():
+            raise ValidationError({"deadline": "La fecha límite no puede ser anterior a hoy."})

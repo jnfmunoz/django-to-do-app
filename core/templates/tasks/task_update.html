@@ -9,32 +9,9 @@
     <form method="POST" action="{% url 'task-update' task.pk %}">
         {% csrf_token %}                
         {{ form.as_p}}
-            {% comment %} <div class="form-group">
-                <label for="titleInput">Título</label>
-                {{ form.title }}
-            </div>
-            <br>
-            <div class="form-group">        
-                <label for="descriptionInput">Descripción</label>
-                {{ form.description }}
-            </div>        
-            <br>
-            <div class="form-group">
-                <label for="deadlineInput">Fecha Límite</label>
-                <input type="date" name="deadline" id="deadline" class="form-control" value="{{task.deadline|date:'Y-m-d'}}">  
-            </div>
-            <br>
-            <div class="form-group">                
-                <label for="priorityInput">Prioridad</label>
-                {{ form.priority }}
-            </div>
-            <br>
-            <div class="form-group">
-                <label for="statusInput">Completada</label>
-                {{ form.status }}
-            </div> {% endcomment %}
-            <br>
-            <button type="submit" class="btn btn-primary">Update Task</button>
+
+        <br>
+        <button type="submit" class="btn btn-primary">Update Task</button>
     </form>
 </body>
 </html>

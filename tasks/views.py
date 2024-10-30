@@ -35,6 +35,11 @@ def task_update(request, pk):
     else:
         form = TaskUpdateForm(instance=task)
 
+        if task.deadline:
+            form.fields['deadline'].initial = task.deadline.strftime('%Y-%m-%d')
+
+    # print(form)
+
     return render(request, 'tasks/task_update.html', {
         'form': form,
         'task': task

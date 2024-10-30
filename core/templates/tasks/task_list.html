@@ -12,6 +12,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th>N°</th>
                 <th>Título</th>
                 <th>Descripción</th>
                 <th>Prioridad</th>
@@ -26,6 +27,7 @@
             {% for task in tasks %}
                 <div>
                     <tr>
+                        <td>{{task.id}}</td>
                         <td>{{task.title}}</td>
                         <td>{{task.description}}</td>
                         <td>{{task.get_priority_display}}</td>                        

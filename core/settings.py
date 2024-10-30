@@ -105,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'es'
+LANGUAGE_CODE = 'EN-US' # 'ES-MX'
 
 TIME_ZONE = 'America/Santiago'
 
@@ -126,4 +126,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # formato fecha DD/MM/YYYY
 DATE_FORMAT = 'd/m/Y'  # Formato de fecha para plantillas de Django
-DATE_INPUT_FORMATS = ['%d/%m/%Y', '%Y-%m-%d']  # Acepta ambos formatos en el input
+DATE_INPUT_FORMATS = ['%d/%m/%Y', '%Y-%m-%d', '%m/%d/%Y']  # Acepta ambos formatos en el input

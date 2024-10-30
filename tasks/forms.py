@@ -22,9 +22,9 @@ class TaskCreateForm(forms.ModelForm):
 class TaskUpdateForm(forms.ModelForm):
 
     deadline = forms.DateField(
-        input_formats=['%m/%d/%Y'],  # Acepta el formato MM/DD/YYYY
+        input_formats=['%m-%d-%Y', '%Y-%m-%d'],  # Agrega aquí los formatos de fecha aceptados
         widget=forms.DateInput(attrs={'type': 'date'}),
-        label="Fecha límite"
+        label = "Fecha límite"
     )
 
     class Meta:

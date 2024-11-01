@@ -1,14 +1,32 @@
 {% extends 'base.html' %}
 
 {% load static %}
-{% block bootstrap5_title %}Update Task{% endblock %}
+{% load form_tags %}
+{% block bootstrap5_title %}New Task{% endblock %}
 
 {% block content %}
+<div class="container">
+    <br>
+    <h2 class="mb-4">Update Task</h2>
     <form method="POST" action="{% url 'task-update' task.pk %}">
-        {% csrf_token %}                
-        {{ form.as_p}}
+        {% csrf_token %}
 
-        <br>
-        <button type="submit" class="btn btn-primary">Update Task</button>
+        <div class="mb-3">
+            {{ form.title|add_class:"form-control" }}
+        </div>
+        <div class="mb-3">
+            {{ form.description|add_class:"form-control" }}
+        </div>
+        <div class="mb-3">
+            {{ form.priority|add_class:"form-control" }}
+        </div>
+        <div class="mb-3">
+            {{ form.deadline|add_class:"form-control" }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Task</button>
     </form>
+</div>
 {% endblock %}
+
+

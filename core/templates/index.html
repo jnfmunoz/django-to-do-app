@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do App</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% load static %}
+{% block bootstrap5_title %}To Do App{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div style="padding-top:50px; text-align:center;">
+      <h1>To Do App</h1>
+      <p class="lead">Organización tareas personales o de equipo, con funciones de priorización y notificaciones.</p>
+    </div>
+  </div>
+{% endblock %}

@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do App</title>
-</head>
-<body>
-    <h3>Título: {{task.title}}</h3>
-    <h5>Descripción: {{task.description}}</h5>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% load static %}
+{% block bootstrap5_title %}Task Detail{% endblock %}
+{% block content %}
+    <h5>{{task.id}}</h5>
+    <h5>{{task.title}}</h5>
+    <h5>{{task.description}}</h5>
+    <h5>{{task.get_priority_display}}</h5>                        
+    <h5>{{task.deadline}}</h5>
+    <h5>{{task.status}}</h5>
+    <h5>{{task.created}}</h5>
+    <h5>{{task.updated}}</h5>   
+{% endblock %}

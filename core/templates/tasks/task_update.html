@@ -12,20 +12,49 @@
         {% csrf_token %}
 
         <div class="mb-3">
+            {% comment %} {{ form.title.label_tag}} {% endcomment %}
+            {{ form.title.label }}
             {{ form.title|add_class:"form-control" }}
+            {% if form.title.errors %}
+                {% for error in form.title.errors %}
+                    <div class="invalid-feedback d-block">{{ error }}</div>
+                {% endfor %}
+            {% endif %}
         </div>
         <div class="mb-3">
+            {{ form.description.label }}
             {{ form.description|add_class:"form-control" }}
+            {% if form.description.errors %}
+                {% for error in form.description.errors %}
+                    <div class="invalid-feedback d-block">{{ error }}</div>
+                {% endfor %}
+            {% endif %}
         </div>
         <div class="mb-3">
+            {{ form.priority.label }}
             {{ form.priority|add_class:"form-control" }}
+            {% if form.priority.errors %}
+                {% for error in form.priority.errors %}
+                    <div class="invalid-feedback d-block">{{ error }}</div>
+                {% endfor %}
+            {% endif %}
         </div>
         <div class="mb-3">
+            {{ form.deadline.label }}
             {{ form.deadline|add_class:"form-control" }}
+            {% if form.deadline.errors %}
+                {% for error in form.deadline.errors %}
+                    <div class="invalid-feedback d-block">{{ error }}</div>
+                {% endfor %}
+            {% endif %}
         </div>
-
-        <button type="submit" class="btn btn-primary">Add Task</button>
+        <div class="mb-3 form-check">        
+            {{ form.status }}
+            <label class="form-check-label" for="status">{{ form.status.label }}</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Task</button>
     </form>
+    <br>
 </div>
 {% endblock %}
 

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'core',
     'tasks',
     'bootstrap5',
+    'sweetify',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +128,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # formato fecha DD/MM/YYYY
 DATE_FORMAT = 'd/m/Y'  # Formato de fecha para plantillas de Django
 DATE_INPUT_FORMATS = ['%d/%m/%Y', '%Y-%m-%d', '%m/%d/%Y']  # Acepta ambos formatos en el input
+
+# possible options: 'sweetalert', 'sweetalert2' - default is 'sweetalert2'
+SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'

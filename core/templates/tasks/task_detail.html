@@ -1,14 +1,35 @@
 {% extends 'base.html' %}
 
 {% load static %}
-{% block bootstrap5_title %}Task Detail{% endblock %}
+{% block bootstrap5_title %}Task Details{% endblock %}
+
 {% block content %}
-    <h5>{{task.id}}</h5>
-    <h5>{{task.title}}</h5>
-    <h5>{{task.description}}</h5>
-    <h5>{{task.get_priority_display}}</h5>                        
-    <h5>{{task.deadline}}</h5>
-    <h5>{{task.status}}</h5>
-    <h5>{{task.created}}</h5>
-    <h5>{{task.updated}}</h5>   
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <!-- Card con detalles de la tarea -->
+            <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white">
+                    <h5 class="card-title mb-0">Task Details</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>ID:</strong> {{ task.id }}</li>
+                        <li class="list-group-item"><strong>Title:</strong> {{ task.title }}</li>
+                        <li class="list-group-item"><strong>Description:</strong> {{ task.description }}</li>
+                        <li class="list-group-item"><strong>Priority:</strong> {{ task.get_priority_display }}</li>
+                        <li class="list-group-item"><strong>Deadline:</strong> {{ task.deadline }}</li>
+                        <li class="list-group-item"><strong>Status:</strong> {{ task.status }}</li>
+                        <li class="list-group-item"><strong>Created:</strong> {{ task.created }}</li>
+                        <li class="list-group-item"><strong>Updated:</strong> {{ task.updated }}</li>
+                    </ul>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="{% url 'task-update' task.pk %}" class="btn btn-warning me-2">Update</a>
+                    <a href="{% url 'task-delete' task.pk %}" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

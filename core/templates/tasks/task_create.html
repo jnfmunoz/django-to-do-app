@@ -11,20 +11,73 @@
     <form method="POST" action="{% url 'task-create' %}">
         {% csrf_token %}
 
+        {% for field in form.visible_fields %}
+            <div class="mb-3">
+                {{ field.label }}
+                {{ field|add_class:"form-control" }}
+                {% if field.errors %}
+                    {% for error in field.errors %}
+                        <div class="invalid-feedback d-block">{{ error }}</div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        {% endfor %}
+
+        <button type="submit" class="btn btn-primary">Add Task</button>
+    </form>
+    <br>
+</div>
+{% endblock %}
+
+{% comment %} {% block content %}
+<div class="container">
+    <br>
+    <h2 class="mb-4">Add New Task</h2>
+    <form method="POST" action="{% url 'task-create' %}">
+        {% csrf_token %}
+
         <div class="mb-3">
+            {{ form.title.label }}
             {{ form.title|add_class:"form-control" }}
+            {% if form.title.errors %}
+                {% for error in form.title.errors %}
+                    <div class="invalid-feedback d-block">{{ error }}</div>
+                {% endfor %}
+            {% endif %}
         </div>
+
         <div class="mb-3">
+            {{ form.description.label }}
             {{ form.description|add_class:"form-control" }}
+            {% if form.description.errors %}
+                {% for error in form.description.errors %}
+                    <div class="invalid-feedback d-block">{{ error }}</div>
+                {% endfor %}
+            {% endif %}
         </div>
+
         <div class="mb-3">
+            {{ form.priority.label }}
             {{ form.priority|add_class:"form-control" }}
+            {% if form.priority.errors %}
+                {% for error in form.priority.errors %}
+                    <div class="invalid-feedback d-block">{{ error }}</div>
+                {% endfor %}
+            {% endif %}
         </div>
+
         <div class="mb-3">
+            {{ form.deadline.label }}
             {{ form.deadline|add_class:"form-control" }}
+            {% if form.deadline.errors %}
+                {% for error in form.deadline.errors %}
+                    <div class="invalid-feedback d-block">{{ error }}</div>
+                {% endfor %}
+            {% endif %}
         </div>
 
         <button type="submit" class="btn btn-primary">Add Task</button>
     </form>
+    <br>
 </div>
-{% endblock %}
+{% endblock %} {% endcomment %}

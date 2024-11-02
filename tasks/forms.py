@@ -11,16 +11,22 @@ class TaskCreateForm(forms.ModelForm):
         }
         error_messages  = {
             'title': {
-                'min_length': "El título debe tener al menos 3 caracteres",            
-                'max_length': "El título debe tener máximo 200 caracteres",
+                'min_length': "El título debe tener al menos 3 caracteres.",            
+                'max_length': "El título debe tener máximo 200 caracteres.",
             },
             'description': {
-                'min_length': "La descripción debe tener al menos 3 caracteres",            
-                'max_length': "El título debe tener máximo 200 caracteres",
+                'min_length': "La descripción debe tener al menos 3 caracteres.",            
+                'max_length': "El título debe tener máximo 200 caracteres.",
             },
         }
 
 class TaskUpdateForm(forms.ModelForm):
+
+    status = forms.BooleanField(
+        required=False,
+        widget=forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+        label="Completada"
+    )
 
     deadline = forms.DateField(
         input_formats=['%m-%d-%Y', '%Y-%m-%d'],
@@ -33,11 +39,11 @@ class TaskUpdateForm(forms.ModelForm):
         fields = ['title', 'description', 'deadline','priority', 'status']
         error_messages  = {
             'title': {
-                'min_length': "El título debe tener al menos 3 caracteres",            
-                'max_length': "El título debe tener máximo 200 caracteres",
+                'min_length': "El título debe tener al menos 3 caracteres.",            
+                'max_length': "El título debe tener máximo 200 caracteres.",
             },
             'description': {
-                'min_length': "La descripción debe tener al menos 3 caracteres",            
-                'max_length': "El título debe tener máximo 200 caracteres",
+                'min_length': "La descripción debe tener al menos 3 caracteres.",            
+                'max_length': "El título debe tener máximo 200 caracteres.",
             },
         }

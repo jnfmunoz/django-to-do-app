@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Task
 from .forms import TaskCreateForm, TaskUpdateForm
+import sweetify
 
 # Create your views here.
 def task_list(request):
@@ -19,6 +20,7 @@ def task_create(request):
         form = TaskCreateForm(request.POST)
         if form.is_valid():
             form.save()            
+            sweetify.toast(request, 'Tarea agregada correctamente')
             return redirect('task-list')            
     else:
         form = TaskCreateForm()
@@ -31,6 +33,7 @@ def task_update(request, pk):
         form = TaskUpdateForm(request.POST, instance=task)
         if form.is_valid():
             form.save()
+            sweetify.toast(request, 'Tarea actualizada correctamente')
             return redirect('task-list')
     else:
         form = TaskUpdateForm(instance=task)

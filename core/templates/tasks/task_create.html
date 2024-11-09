@@ -3,12 +3,13 @@
 {% load static %}
 {% load form_tags %}
 {% block bootstrap5_title %}New Task{% endblock %}
+{% block body_class %}task-create-page{% endblock %}
 
 {% block content %}
 <div class="container">
     <br>
     <h2 class="mb-4">Add New Task</h2>
-    <form method="POST" action="{% url 'task-create' %}">
+    <form id="taskCreateForm" method="POST" action="{% url 'task-create' %}">
         {% csrf_token %}
 
         {% for field in form.visible_fields %}
@@ -22,11 +23,14 @@
                 {% endif %}
             </div>
         {% endfor %}
-
-        <button type="submit" class="btn btn-primary">Add Task</button>
+        
+        <button type="button" class="btn btn-primary" id="confirmCreateBtn">Add Task</button>
     </form>
     <br>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script type="text/javascript" src="{% static 'core/js/alerts.js' %}"></script>
 {% endblock %}
 
 {% comment %} {% block content %}

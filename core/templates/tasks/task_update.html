@@ -2,13 +2,14 @@
 
 {% load static %}
 {% load form_tags %}
-{% block bootstrap5_title %}New Task{% endblock %}
+{% block bootstrap5_title %}Update Task{% endblock %}
+{% block body_class %}task-update-page{% endblock %}
 
 {% block content %}
 <div class="container">
     <br>
     <h2 class="mb-4">Update Task</h2>
-    <form method="POST" action="{% url 'task-update' task.pk %}">
+    <form id="taskUpdateForm" method="POST" action="{% url 'task-update' task.pk %}">
         {% csrf_token %}
 
         <div class="mb-3">
@@ -52,10 +53,14 @@
             {{ form.status }}
             <label class="form-check-label" for="status">{{ form.status.label }}</label>
         </div>
-        <button type="submit" class="btn btn-primary">Update Task</button>
+        {% comment %} <button type="submit" class="btn btn-primary">Update Task</button> {% endcomment %}
+        <button type="button" class="btn btn-primary" id="confirmUpdateBtn">Update Task</button>
     </form>
     <br>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script type="text/javascript" src="{% static 'core/js/alerts.js' %}"></script>
 {% endblock %}
 
 

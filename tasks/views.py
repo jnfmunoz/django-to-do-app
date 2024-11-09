@@ -20,8 +20,10 @@ def task_create(request):
         form = TaskCreateForm(request.POST)
         if form.is_valid():
             form.save()            
-            sweetify.toast(request, 'Tarea agregada correctamente')
+            sweetify.toast(request, 'Tarea agregada correctamente', icon="success")
             return redirect('task-list')            
+        else:
+            sweetify.toast(request, 'Error al agregar la tarea. Verifica los datos ingresados.', icon="error")            
     else:
         form = TaskCreateForm()
     return render(request, 'tasks/task_create.html', {'form':form})
@@ -33,8 +35,10 @@ def task_update(request, pk):
         form = TaskUpdateForm(request.POST, instance=task)
         if form.is_valid():
             form.save()
-            sweetify.toast(request, 'Tarea actualizada correctamente')
+            sweetify.toast(request, 'Tarea actualizada correctamente', icon="success")
             return redirect('task-list')
+        else:
+            sweetify.toast(request, 'Error al actualizar la tarea. Verifica los datos ingresados.', icon="error")
     else:
         form = TaskUpdateForm(instance=task)
 
@@ -51,4 +55,5 @@ def task_update(request, pk):
 def task_delete(request, pk):
     task = Task.objects.get(pk=pk)
     task.delete()
+    sweetify.toast(request, 'La tarea ha sido eliminada correctamente')
     return redirect('task-list')

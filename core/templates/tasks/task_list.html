@@ -19,12 +19,12 @@
                 <tr>
                     <th>N°</th>
                     <th>Título</th>
-                    <th>Descripción</th>
+                    {% comment %} <th>Descripción</th> {% endcomment %}
                     <th>Prioridad</th>
                     <th>Fecha Límite</th>
                     <th>Completada</th>
-                    <th>Fecha de creación</th>
-                    <th>Fecha de edición</th>
+                    {% comment %} <th>Fecha de creación</th> {% endcomment %}
+                    {% comment %} <th>Fecha de edición</th> {% endcomment %}
                     <th>Acciones</th>                
                 </tr>
             </thead>
@@ -33,12 +33,12 @@
                     <tr>
                         <td>{{ task.id }}</td>
                         <td>{{ task.title }}</td>
-                        <td>{{ task.description }}</td>
+                        {% comment %} <td>{{ task.description }}</td> {% endcomment %}
                         <td>{{ task.get_priority_display }}</td>
                         <td>{{ task.deadline }}</td>
                         <td>{{ task.status }}</td>
-                        <td>{{ task.created }}</td>
-                        <td>{{ task.updated }}</td>
+                        {% comment %} <td>{{ task.created }}</td> {% endcomment %}
+                        {% comment %} <td>{{ task.updated }}</td> {% endcomment %}
                         <td class="text-center"> 
                             <div class="btn-group" role="group">
                                 <a href="{% url 'task-detail' task.pk %}" class="btn btn-sm btn-info">Detail</a>

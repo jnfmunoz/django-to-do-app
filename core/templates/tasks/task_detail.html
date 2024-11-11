@@ -2,7 +2,7 @@
 
 {% load static %}
 {% block bootstrap5_title %}Task Detail{% endblock %}
-{% block body_class %}task-update-page{% endblock %}
+{% block body_class %}task-detail-page{% endblock %}
 
 {% block content %}
 <div class="container my-5">
@@ -26,11 +26,14 @@
                     </ul>
                 </div>
                 <div class="card-footer text-center">
-                    <a href="{% url 'task-update' task.pk %}" class="btn btn-warning me-2">Update</a>
-                    <a href="{% url 'task-delete' task.pk %}" class="btn btn-danger">Delete</a>
+                    <a href="{% url 'task-update' task.pk %}" class="btn btn-warning me-2">Update Task</a>
+                    <a href="" class="btn btn-danger deleteTaskBtn"  data-url="{% url 'task-delete' task.pk %}">Delete Task</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script type="text/javascript" src="{% static 'core/js/alerts.js' %}"></script>
 {% endblock %}

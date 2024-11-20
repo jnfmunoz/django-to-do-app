@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% load static %}
-{% block bootstrap5_title %}Task Detail{% endblock %}
+{% block bootstrap5_title %}Detalle Tarea{% endblock %}
 {% block body_class %}task-detail-page{% endblock %}
 
 {% block content %}
@@ -11,23 +11,23 @@
             <!-- Card con detalles de la tarea -->
             <div class="card shadow-sm">
                 <div class="card-header bg-dark text-white">
-                    <h5 class="card-title mb-0">Task Detail</h5>
+                    <h5 class="card-title mb-0">Detalle Tarea</h5>
                 </div>
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><strong>ID:</strong> {{ task.id }}</li>
-                        <li class="list-group-item"><strong>Title:</strong> {{ task.title }}</li>
-                        <li class="list-group-item"><strong>Description:</strong> {{ task.description }}</li>
-                        <li class="list-group-item"><strong>Priority:</strong> {{ task.get_priority_display }}</li>
-                        <li class="list-group-item"><strong>Deadline:</strong> {{ task.deadline }}</li>
-                        <li class="list-group-item"><strong>Status:</strong> {{ task.status }}</li>
-                        <li class="list-group-item"><strong>Created:</strong> {{ task.created }}</li>
-                        <li class="list-group-item"><strong>Updated:</strong> {{ task.updated }}</li>
+                        <li class="list-group-item"><strong>N°:</strong> {{ task.id }}</li>
+                        <li class="list-group-item"><strong>Título:</strong> {{ task.title }}</li>
+                        <li class="list-group-item"><strong>Descripción:</strong> {{ task.description }}</li>
+                        <li class="list-group-item"><strong>Prioridad:</strong> {{ task.get_priority_display }}</li>
+                        <li class="list-group-item"><strong>Fecha Límite:</strong> {{ task.deadline }}</li>
+                        <li class="list-group-item"><strong>Completada:</strong> {{ task.status }}</li>
+                        <li class="list-group-item"><strong>Fecha Creación:</strong> {{ task.created }}</li>
+                        <li class="list-group-item"><strong>Fecha Modificación:</strong> {{ task.updated }}</li>
                     </ul>
                 </div>
                 <div class="card-footer text-center">
-                    <a href="{% url 'task-update' task.pk %}" class="btn btn-warning me-2">Update Task</a>
-                    <a href="" class="btn btn-danger deleteTaskBtn"  data-url="{% url 'task-delete' task.pk %}">Delete Task</a>
+                    <a href="{% url 'task-update' task.pk %}" class="btn btn-warning me-2">Actualizar Tarea</a>
+                    <a href="" class="btn btn-danger deleteTaskBtn"  data-url="{% url 'task-delete' task.pk %}">Eliminar Tarea</a>
                 </div>
             </div>
         </div>

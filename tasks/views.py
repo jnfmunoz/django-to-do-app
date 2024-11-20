@@ -6,6 +6,19 @@ import sweetify
 # Create your views here.
 def task_list(request):
     tasks = Task.objects.all()
+
+    # filters
+    task_id = request.GET.get('task_id', '')
+    priority = request.GET.get('priority', '')
+    deadline = request.GET.get('deadline', '')
+
+    if task_id:
+        tasks = tasks.filter(id=task_id)
+    if priority:
+        tasks = tasks.filter(priority=priority)
+    if deadline:
+        tasks = tasks.filter(deadline=deadline) 
+
     context = {'tasks': tasks, 'priorities': Task.PRIORITY}
 
     return render(request, 'tasks/task_list.html', context)

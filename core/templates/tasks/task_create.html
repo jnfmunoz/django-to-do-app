@@ -2,7 +2,7 @@
 
 {% load static %}
 {% load form_tags %}
-{% block bootstrap5_title %}New Task{% endblock %}
+{% block bootstrap5_title %}Nueva Tarea{% endblock %}
 {% block body_class %}task-create-page{% endblock %}
 
 {% block content %}
@@ -11,7 +11,7 @@
         <div class="col-md-8 col-lg-6">
             <div class="card shadow-sm">
                 <div class="card-header bg-dark text-white">
-                    <h5>Create Task</h5>
+                    <h5>Nueva Tarea</h5>
                 </div>
                 <div class="card-body">
                     <form id="taskCreateForm" method="POST" action="{% url 'task-create' %}">
@@ -28,7 +28,7 @@
                                 {% endif %}
                             </div>
                         {% endfor %}
-                        <button type="button" class="btn btn-primary" id="confirmCreateBtn">Add Task</button>
+                        <button type="button" class="btn btn-primary" id="confirmCreateBtn">Agregar Tarea</button>
                     </form>
                 </div>
             </div>

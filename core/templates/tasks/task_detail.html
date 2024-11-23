@@ -20,7 +20,7 @@
                         <li class="list-group-item"><strong>Descripción:</strong> {{ task.description }}</li>
                         <li class="list-group-item"><strong>Prioridad:</strong> {{ task.get_priority_display }}</li>
                         <li class="list-group-item"><strong>Fecha Límite:</strong> {{ task.deadline }}</li>
-                        <li class="list-group-item"><strong>Completada:</strong> {{ task.status }}</li>
+                        <li class="list-group-item"><strong>Completada:</strong> {% if task.status %}Sí{% else %}No{% endif %}</li>
                         <li class="list-group-item"><strong>Fecha Creación:</strong> {{ task.created }}</li>
                         <li class="list-group-item"><strong>Fecha Modificación:</strong> {{ task.updated }}</li>
                     </ul>

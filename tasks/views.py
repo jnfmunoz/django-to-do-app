@@ -11,13 +11,20 @@ def task_list(request):
     task_id = request.GET.get('task_id', '')
     priority = request.GET.get('priority', '')
     deadline = request.GET.get('deadline', '')
+    status = request.GET.get('status', '')
 
     if task_id:
         tasks = tasks.filter(id=task_id)
     if priority:
         tasks = tasks.filter(priority=priority)
     if deadline:
-        tasks = tasks.filter(deadline=deadline) 
+        tasks = tasks.filter(deadline=deadline)
+    if status is not None:
+        if status == '1':
+            tasks = tasks.filter(status=True)
+        elif status == '0':
+            tasks = tasks.filter(status=False)
+    
 
     context = {'tasks': tasks, 'priorities': Task.PRIORITY}
 

@@ -13,7 +13,9 @@
             <a href="{% url 'task-create' %}" class="btn btn-primary">Agregar Tarea</a>
         </div>
     </div>
-    <!-- Filtros de búsqueda -->
+    
+     {% comment %} 
+     <!-- Filtros de búsqueda -->
     <div class="row mb-3">
         <div class="col">
             <form method="get" action="{% url 'task-list' %}" class="row g-3 align-items-end">
@@ -54,7 +56,61 @@
                 </div>
             </form>
         </div>
+    </div>  
+    {% endcomment %}
+    
+    <!-- Filtros de búsqueda -->
+    <div class="row mb-3">
+        <div class="col-12">
+            <form method="get" action="{% url 'task-list' %}" class="row g-3 align-items-end">
+                <!-- Buscar por Número de Tarea -->
+                <div class="col-12 col-md-3">
+                    <label for="taskNumber" class="form-label">Número de Tarea</label>
+                    <input 
+                        type="number" 
+                        name="task_id" 
+                        id="taskNumber" 
+                        class="form-control w-100" 
+                        placeholder="Número de Tarea" 
+                        value="{{ request.GET.task_id|default_if_none:'' }}">
+                </div>
+                <!-- Filtro por Prioridad -->
+                <div class="col-12 col-md-3">
+                    <label for="priority" class="form-label">Prioridad</label>
+                    <select name="priority" id="priority" class="form-select w-100">
+                        <option value="">Seleccionar Prioridad</option>
+                        <option value="B" {% if request.GET.priority == 'B' %}selected{% endif %}>Baja</option>
+                        <option value="M" {% if request.GET.priority == 'M' %}selected{% endif %}>Media</option>
+                        <option value="A" {% if request.GET.priority == 'A' %}selected{% endif %}>Alta</option>
+                    </select>
+                </div>
+                <!-- Filtro por Fecha Límite -->
+                <div class="col-12 col-md-3">
+                    <label for="deadline" class="form-label">Fecha Límite</label>
+                    <input 
+                        type="date" 
+                        name="deadline" 
+                        id="deadline" 
+                        class="form-control w-100" 
+                        value="{{ request.GET.deadline|default_if_none:'' }}">
+                </div>
+                <!-- Filtro por Estado (Completadas / No Completadas) -->
+                <div class="col-12 col-md-2">
+                    <label for="status" class="form-label">Estado</label>
+                    <select name="status" id="status" class="form-select w-100">
+                        <option value="">Seleccionar Estado</option>
+                        <option value="1" {% if request.GET.status == '1' %}selected{% endif %}>Completadas</option>
+                        <option value="0" {% if request.GET.status == '0' %}selected{% endif %}>No Completadas</option>
+                    </select>
+                </div>
+                <!-- Botón para Filtrar -->
+                <div class="col-12 col-md-1 d-flex justify-content-center align-items-end">
+                    <button type="submit" class="btn btn-primary w-100">Filtrar</button>
+                </div>
+            </form>
+        </div>
     </div>
+
     <!-- Tabla responsive -->
     <div class="table-responsive">        
         <table class="table table-bordered table-bordered-black">                    
@@ -98,6 +154,6 @@
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+{% comment %} <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script> {% endcomment %}
 <script type="text/javascript" src="{% static 'core/js/alerts.js' %}"></script>
 {% endblock %}

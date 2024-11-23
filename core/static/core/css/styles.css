@@ -1,0 +1,8 @@
+form .col-md-2,
+form .col-md-3 {
+    margin-right: 15px; /* Añade un margen derecho manual */
+}
+
+form .col-md-3:last-child {
+    margin-right: 0; /* Elimina el margen del último elemento */
+}

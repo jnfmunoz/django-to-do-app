@@ -5,6 +5,12 @@
 
 {% block bootstrap5_content %}
     <head>        
+        <!-- Estilos -->
+        {% comment %} 
+        <link href="{% static 'core/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'core/css/main.css' %}" rel="stylesheet"> 
+        {% endcomment %}
         <!-- Sweetify2 CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
         <!-- Sweetify2 JavaScript -->
@@ -38,6 +44,10 @@
 
         <!-- Alerts JavaScript -->
         <script type="text/javascript" src="{% static 'core/js/alerts.js' %}"></script>
+        <!-- Javascript -->
+        <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'core/js/main.js' %}"></script>
 
         <!-- JQuery 3.7.0 -->    
         {% comment %} <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script> {% endcomment %}

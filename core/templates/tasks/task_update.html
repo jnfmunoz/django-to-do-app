@@ -57,17 +57,16 @@
                         <div class="mb-3 form-check">        
                             {{ form.status }}
                             <label class="form-check-label" for="status">{{ form.status.label }}</label>
-                        </div>                        
-                        <button type="button" class="btn btn-warning" id="confirmUpdateBtn">Actualizar Tarea</button>
+                        </div>
+                        <div class="card-footer text-center">                                             
+                            <button type="button" class="btn btn-warning" id="confirmUpdateBtn">Actualizar Tarea</button>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-<script type="text/javascript" src="{% static 'core/js/alerts.js' %}"></script>
 {% endblock %}
 
 

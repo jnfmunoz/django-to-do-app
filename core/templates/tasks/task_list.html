@@ -139,7 +139,7 @@
                                 <div class="btn-group" role="group">
                                     <a href="{% url 'task-detail' task.pk %}" class="btn btn-sm btn-info">Detalle</a>
                                     <a href="{% url 'task-update' task.pk %}" class="btn btn-sm btn-warning">Actualizar</a>                                
-                                    <a href="" class="btn btn-sm btn-danger deleteTaskBtn" data-url="{% url 'task-delete' task.pk %}">Eliminar</a>
+                                    <a href="" class="btn btn-sm btn-danger deleteTaskBtn" data-url="{% url 'task-delete' task.pk %}">Eliminar</a>                                    
                                 </div>
                             </td>
                         </tr>
@@ -154,6 +154,4 @@
     </div>
 </div>
 
-{% comment %} <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script> {% endcomment %}
-<script type="text/javascript" src="{% static 'core/js/alerts.js' %}"></script>
 {% endblock %}

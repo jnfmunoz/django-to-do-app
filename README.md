@@ -28,7 +28,7 @@ Esta aplicación permite a los usuarios crear, editar, buscar y eliminar tareas,
 ## Instalación
 1. Clona este repositorio
 	```bash
-	git clone 	https://github.com/jnfmunoz/django-to-do-app.git
+	git clone https://github.com/jnfmunoz/django-to-do-app.git
 
 2. Navega al directorio del repositorio:
     cd django-to-do-app

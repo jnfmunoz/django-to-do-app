@@ -1,5 +1,4 @@
 <p align="center">
-  <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Django_logo.svg" alt="Django Logo" width="200"> -->
   <img src="screenshots/django-logo.png" alt="Django Logo" width="200">
 </p>
 
@@ -30,25 +29,32 @@ Esta aplicación permite a los usuarios crear, editar, buscar y eliminar tareas,
 1. Clona este repositorio
 	```bash
 	git clone https://github.com/jnfmunoz/django-to-do-app.git
+ 	```
 
 2. Navega al directorio del repositorio:
-    cd django-to-do-app
-
-3. Crea y activa un entorno virtual:
-    Para crear un entorno virtual:
-        python -m venv venv-django-to-do-app
-    Para activar tu entorno virtual:
-        .\venv-django-to-do-app\Scripts\activate
-
-4. Instala las dependencias:
-        pip install -r requirements.txt
-
-5. Realiza las migraciones:
-        python manage.py migrate
-
-6. Iniciar el servidor de desarrollo:
-        python manage.py runserver
-
+	``` bash
+   	cd django-to-do-app
+	```     
+3. Crea un entorno virtual:
+	```bash
+	python -m venv venv-django-to-do-app
+ 	```    
+4. Para activar tu entorno virtual:
+	```bash
+	.\venv-django-to-do-app\Scripts\activate
+	```	
+5. Instala las dependencias:
+	```bash
+	pip install -r requirements.txt
+	```
+6. Realiza las migraciones:
+	```bash
+   	python manage.py migrate
+	```
+7. Iniciar el servidor de desarrollo:
+	```bash
+	python manage.py runserver
+	```
 ## Uso
 1. Accede a `http://127.0.0.1:8000/`.
 2. !Comienza a gestionar tus tareas!
@@ -56,49 +62,77 @@ Esta aplicación permite a los usuarios crear, editar, buscar y eliminar tareas,
 ## Capturas de Pantalla
 
 #### Página de inicio
-![Página de inicio](screenshots/index.PNG)
+<p align="center">
+  <img src="screenshots\index.PNG">
+</p>
 
 #### Listado de tareas
-![Listado de tareas](screenshots/task-list.PNG)
+<p align="center">
+  <img src="screenshots\task-list.PNG">
+</p>
 
 #### Detalle de tarea
-![Detalle Tarea](screenshots/task-detail.PNG)
+<p align="center">
+  <img src="screenshots\task-detail.PNG">
+</p>
 
 #### Nueva tarea
-![Nueva Tarea](screenshots/new-task.PNG)
+<p align="center">
+  <img src="screenshots\new-task.PNG">
+</p>
 
 #### Actualizar tarea
-![Actualizar Tarea](screenshots/update-task.PNG)
+<p align="center">
+  <img src="screenshots\update-task.PNG">
+</p>
 
 ## Filtros de búsqueda
 
 ### Búsqueda por id
-![Buscar por id](screenshots/search-task-by-id.PNG)
+<p align="center">
+  <img src="screenshots\search-task-by-id.PNG">
+</p>
 
 ### Búsqueda por prioridad
-![Buscar por prioridad](screenshots/search-task-by-priority.PNG)
+<p align="center">
+  <img src="screenshots\search-task-by-priority.PNG">
+</p>
 
 ### Búsqueda por fecha límite
-![Buscar por fecha límite](screenshots/search-task-by-deadline.PNG)
+<p align="center">
+  <img src="screenshots\search-task-by-deadline.PNG">
+</p>
 
 ### Búsqueda por estado
-![Buscar por estado](screenshots/search-task-by-status.PNG)
+<p align="center">
+  <img src="screenshots\search-task-by-status.PNG">
+</p>
 
 ### Búsqueda por campos mixtos
-![Buscar por múltiples filtros](screenshots/search-task-mixed.PNG)
+<p align="center">
+  <img src="screenshots\search-task-mixed.PNG">
+</p>
 
 ### Buscar y no obtener resultados
-![Sin resultados](screenshots/search-task-no-results.PNG)
+<p align="center">
+  <img src="screenshots\search-task-no-results.PNG">
+</p>
 
 ## Mensajes de confirmación
 ### Antes de eliminar una tarea
-[!Confirmar antes de eliminar una tarea](screenshots/delete-task-confirm-message.PNG)
+<p align="center">
+  <img src="screenshots\delete-task-confirm-message.PNG">
+</p>
 
 ### Antes de agregar una nueva tarea
-[!Confirmar y agregar una tarea](screenshots/new-task-confirm-message.PNG)
+<p align="center">
+  <img src="screenshots\new-task-confirm-message.PNG">
+</p>
 
 ### Antes de actualizar una tarea
-![Confirmar y actualizar una tarea](screenshots/update-task-confirm-message.PNG)
+<p align="center">
+  <img src="screenshots\update-task-confirm-message.PNG">
+</p>
 
 ## Tecnologías
 - **Django 4.2.16** - Framework web de Python.

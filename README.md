@@ -2,8 +2,11 @@
   <img src="screenshots/django-logo.png" alt="Django Logo" width="200">
 </p>
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) 
-![CSS](https://img.shields.io/badge/CSS-3-blue) ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow) ![Python](https://img.shields.io/badge/Python-3.11.4-blue) ![Django](https://img.shields.io/badge/Django-4.2.16-green) ![SQLite3](https://img.shields.io/badge/SQLite-3.39-blue) ![django-bootstrap-v5](https://img.shields.io/badge/django--bootstrap--v5-1.0.11-blueviolet) ![sweetify](https://img.shields.io/badge/sweetify-2.3.1-yellow)   
+<div align="center">
+		
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/CSS-3-blue) ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow) ![Python](https://img.shields.io/badge/Python-3.11.4-blue) ![Django](https://img.shields.io/badge/Django-4.2.16-green) ![SQLite3](https://img.shields.io/badge/SQLite-3.39-blue) ![django-bootstrap-v5](https://img.shields.io/badge/django--bootstrap--v5-1.0.11-blueviolet) ![sweetify](https://img.shields.io/badge/sweetify-2.3.1-yellow)   
+ 
+</div> 
 
 # Gestión de Tareas con Django
 Una aplicación web para gestionar tareas personales, diseñada para simplificar la organización y la productividad.

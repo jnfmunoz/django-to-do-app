@@ -29,8 +29,8 @@ Esta aplicación permite a los usuarios crear, editar, buscar y eliminar tareas,
 - Alertas y confirmaciones con Sweetify.
 
 ## Instalación
-1. Clona este repositorio
-	```bash
+1. Clona este repositorio:
+	``` bash
 	git clone https://github.com/jnfmunoz/django-to-do-app.git
  	```
 
@@ -39,23 +39,23 @@ Esta aplicación permite a los usuarios crear, editar, buscar y eliminar tareas,
    	cd django-to-do-app
 	```     
 3. Crea un entorno virtual:
-	```bash
+	``` bash
 	python -m venv venv-django-to-do-app
  	```    
 4. Para activar tu entorno virtual:
-	```bash
+	``` bash
 	.\venv-django-to-do-app\Scripts\activate
 	```	
 5. Instala las dependencias:
-	```bash
+	``` bash
 	pip install -r requirements.txt
 	```
 6. Realiza las migraciones:
-	```bash
+	``` bash
    	python manage.py migrate
 	```
 7. Iniciar el servidor de desarrollo:
-	```bash
+	``` bash
 	python manage.py runserver
 	```
 ## Uso
